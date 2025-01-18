@@ -1,20 +1,15 @@
 .test {
     border: black, 1px, solid;
-    color: blue;
+    color: red;
 }
 
 .white-text {
     color: white;
 }
 
-.image-text {
-    color: black;
-    font-size: 24px;
-}
-
 #title {
     background-color: #666555;
-    padding-bottom: 16px;
+    padding-bottom: 15px;
 }
 
 #big-text {
@@ -26,21 +21,42 @@
 }
 
 #section1 {
-    border: purple, 2px, solid;
     display: flex;
     justify-content: center;
-    margin: 100px;
-    margin-left: 200px;
-    margin-right: 200px;
+    padding: auto;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
-.box {
-    border: hotpink, 2px, solid;
-    padding: 30px;
+.image-text {
+    color: black;
+    font-size: 24px;
+    margin-top: 16px;
 }
 
 .images {
+    border: grey, 1px, solid;
     margin: auto;
     width: auto;
     max-height: 300px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 5px;
+    font-weight: bold;
+    background-color: #AAAAAA;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+#section2 {
+    margin: 128px;
+    margin-left: 100px;
+    margin-right: 50px;
 }

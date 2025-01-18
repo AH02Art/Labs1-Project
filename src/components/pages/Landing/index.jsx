@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDownloadData } from '../../../hooks/useDownloadData.js';
 import {decodeBase64} from '../../../utils/decodeBase64.js';
 
-import "./styles.css"; // importing my styles
+import { NavLink } from "react-router-dom"; // imported NavLink to seamlessly switch between pages
+import "./styles.css";                    // importing my styles
 
 /**
  * TODO: Ticket 1:
@@ -40,18 +41,25 @@ export const LandingPage = () => {
           <h3 id="small-text" className='white-text'>The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
         </div>
       <section id="section1">
-        <div className="box">
+        <div>
           <img className="images" src={barGraph} alt="barGraph image"/>
           <h3 className="image-text">Search Grant Rates By Office</h3>
         </div>
-        <div className="box">
+        <div>
           <img className="images" src={pieChart} alt="pieChart image"/>
           <h3 className="image-text">Search Grant Rates By Nationality</h3>
         </div>
-        <div className="box">
+        <div>
           <img className="images" src={lineGraph} alt="lineGraph image"/>
           <h3 className="image-text">Search Grant Rates Over Time</h3>
         </div>
+      </section>
+      <div id="buttons">
+          <a href="/graphs" className="white-text button">View the Data</a>
+          <button onClick={downloadCSV} className="white-text button">Download the Data</button>
+      </div>
+      <section >
+
       </section>
       <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div>
     </div>
