@@ -16,10 +16,11 @@
     font-size: 60px;
 }
 
-#small-text {
+.small-text {
     margin: 16px;
 }
 
+/* need 2 readjust later on... */
 #section1 {
     display: flex;
     justify-content: center;
@@ -27,6 +28,7 @@
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
+    gap: 50px;
 }
 
 .image-text {
@@ -36,10 +38,9 @@
 }
 
 .images {
-    border: grey, 1px, solid;
     margin: auto;
-    width: auto;
     max-height: 300px;
+    width: auto;
 }
 
 #buttons {
@@ -47,7 +48,8 @@
     justify-content: center;
 }
 
-.button {
+/* need 2 readjust later on... */
+.button { 
     padding: 5px;
     font-weight: bold;
     background-color: #AAAAAA;
@@ -56,7 +58,24 @@
 }
 
 #section2 {
-    margin: 128px;
-    margin-left: 100px;
-    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 128px;
+    margin-bottom: 128px;
+    margin: 64px;
+    gap: 64px;
+}
+
+#big-image {
+    flex: 1;
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 2.5%;
+}
+
+#p {
+    font-size: 20px;
+    text-align: justify;
 }

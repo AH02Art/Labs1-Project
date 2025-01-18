@@ -37,8 +37,8 @@ export const LandingPage = () => {
   return (
     <div className='flex-c w-[100vw] secondary-c'>
         <div id="title">
-          <h1 id="big-text" className='white-text'>Asylum Office Grant Rate Tracker</h1>
-          <h3 id="small-text" className='white-text'>The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
+          <h1 id="big-text" className="white-text">Asylum Office Grant Rate Tracker</h1>
+          <h3 className="white-text small-text">The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
         </div>
       <section id="section1">
         <div>
@@ -55,11 +55,12 @@ export const LandingPage = () => {
         </div>
       </section>
       <div id="buttons">
-          <a href="/graphs" className="white-text button">View the Data</a>
+          <NavLink to="/graphs" className="white-text button">View the Data</NavLink>
           <button onClick={downloadCSV} className="white-text button">Download the Data</button>
       </div>
-      <section >
-
+      <section id="section2">
+        <img id="big-image" src={paperStack} alt="papers image"/>
+        <p id="p">Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</p>
       </section>
       <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div>
     </div>
