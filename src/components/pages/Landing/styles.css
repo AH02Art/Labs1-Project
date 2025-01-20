@@ -54,13 +54,13 @@
     font-weight: bold;
     background-color: #AAAAAA;
     margin-left: 30px;
-    margin-right: 5px;
+margin-right: 5px;
 }
 
 #section2 {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     margin-top: 128px;
     margin-bottom: 128px;
     margin: 64px;
@@ -68,7 +68,7 @@
 }
 
 #big-image {
-    flex: 1;
+    float: left;
     width: 800px;
     height: 400px;
     object-fit: cover;
@@ -76,6 +76,9 @@
 }
 
 #p {
+    overflow: hidden;
     font-size: 20px;
     text-align: justify;
+    padding-top: 120px;
+    padding-left: 64px;
 }
