@@ -16,15 +16,18 @@
     font-size: 60px;
 }
 
-.small-text {
+.small-title {
     margin: 16px;
+}
+
+.small-text {
+    font-size: 20px;
 }
 
 /* need 2 readjust later on... */
 #section1 {
     display: flex;
     justify-content: center;
-    padding: auto;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
@@ -43,7 +46,7 @@
     width: auto;
 }
 
-#buttons {
+.buttons {
     display: flex;
     justify-content: center;
 }
@@ -54,16 +57,14 @@
     font-weight: bold;
     background-color: #AAAAAA;
     margin-left: 30px;
-margin-right: 5px;
+    margin-right: 5px;
 }
 
 #section2 {
     /* display: flex;
     align-items: center;
     justify-content: space-between; */
-    margin-top: 128px;
-    margin-bottom: 128px;
-    margin: 64px;
+    margin: 128px;
     gap: 64px;
 }
 
@@ -77,8 +78,38 @@ margin-right: 5px;
 
 #p {
     overflow: hidden;
-    font-size: 20px;
     text-align: justify;
-    padding-top: 120px;
-    padding-left: 64px;
+    margin: auto;
+    padding: 64px;
+}
+
+#section3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#medium-text {
+    font-size: 48px;
+    margin-bottom: 100px;
+}
+
+.insight {
+    max-width: 512px;
+    gap: 32px;
+}
+
+.insight-text {
+    padding: 50px;
+}
+
+#percent {
+    font-size: 36px;
+}
+
+#read-more {
+    padding: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #666555;
 }
