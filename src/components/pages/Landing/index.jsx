@@ -20,14 +20,14 @@ export const LandingPage = () => {
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
+    let scrollStep = -window.scrollY / 200; // Adjust the divisor for speed (20)
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
       } else {
         window.scrollBy(0, scrollStep);
       }
-    }, 10); // Adjust the interval time for smoothness
+    }, 5); // Adjust the interval time for smoothness (10)
   };
 
   const handleReadMore = () => {
@@ -81,7 +81,10 @@ export const LandingPage = () => {
       <div className="buttons">
           <button onClick={handleReadMore} id="read-more" className="white-text read-more">Read More</button>
       </div>
-      <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div>
+      <div>
+          <button onClick={scrollToTop} id="scroll">Back To Top ^</button>
+      </div>
+      {/* <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div> */}
     </div>
   );
 };
