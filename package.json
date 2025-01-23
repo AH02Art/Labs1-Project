@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-css": "tailwindcss build src/components/pages/landing/input.css -o src/components/pages/landing/output.css"
   },
   "dependencies": {
     "@testing-library/react": "^16.0.1",

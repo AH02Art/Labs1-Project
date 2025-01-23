@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDownloadData } from '../../../hooks/useDownloadData.js';
 import {decodeBase64} from '../../../utils/decodeBase64.js';
 
-import { NavLink } from "react-router-dom"; // imported NavLink to seamlessly switch between pages
-import "./styles.css";                    // importing my styles
+import { NavLink } from "react-router-dom"; // imported NavLink to seamlessly switch between pages on the same website
+import "./output.css";                      // importing my Landing Page Tailwind styles
 
 /**
  * TODO: Ticket 1:
@@ -16,11 +16,11 @@ import "./styles.css";                    // importing my styles
  */
 
 export const LandingPage = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // I used window.open over the useNavigate() hook in handleReadMore() and it worked just fine
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 200; // Adjust the divisor for speed (20)
+    let scrollStep = -window.scrollY / 200; // scrollStep controls how many times it scrolls up (20)
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
@@ -29,7 +29,8 @@ export const LandingPage = () => {
       }
     }, 5); // Adjust the interval time for smoothness (10)
   };
-
+  
+  // I did a quick W3schools search on the windows object and window.open is what I was looking for. 
   const handleReadMore = () => {
     // TODO: navigate to the humanrightsfirst.org homepage
     window.open("https://humanrightsfirst.org");
@@ -37,52 +38,59 @@ export const LandingPage = () => {
 
   return (
     <div className='flex-c w-[100vw] secondary-c'>
-        <div id="title">
-          <h1 id="big-text" className="white-text">Asylum Office Grant Rate Tracker</h1>
-          <h3 className="white-text small-title">The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
+      {/* this section is on the top 3 images */}
+        <div className='text-white bg-[#666555] pt-4 pb-8'>
+          <h1 className='text-6xl mb-8'>Asylum Office Grant Rate Tracker</h1>
+          <h3>The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
         </div>
-      <section id="section1">
-        <div>
-          <img className="images" src={barGraph} alt="barGraph image"/>
-          <h3 className="image-text">Search Grant Rates By Office</h3>
-        </div>
-        <div>
-          <img className="images" src={pieChart} alt="pieChart image"/>
-          <h3 className="image-text">Search Grant Rates By Nationality</h3>
-        </div>
-        <div>
-          <img className="images" src={lineGraph} alt="lineGraph image"/>
-          <h3 className="image-text">Search Grant Rates Over Time</h3>
-        </div>
+      {/* this section is on the top 3 images */}
+      <section className='flex justify-center m-auto mt-24 mb-[50px] gap-[80px]'>
+          <div>
+            <img className="h-[300px] w-[500px]" src={barGraph} alt='Bar Graph'/>
+            <h3 className='text-2xl mt-4'>Search Grant Rates By Office</h3>
+          </div>
+          <div>
+            <img className="h-[300px] w-[350px]" src={pieChart} alt='Pie Chart'/>
+            <h3 className='text-2xl mt-4'>Search Grant Rates By Nationality</h3>
+          </div>
+          <div>
+            <img className="h-[300px] w-[500px]" src={lineGraph} alt='Line Graph'/>
+            <h3 className='text-2xl mt-4'>Search Grant Rates Over Time</h3>
+          </div>
       </section>
-      <div className="buttons">
-          <NavLink to="/graphs" className="white-text button">View the Data</NavLink>
-          <button onClick={downloadCSV} className="white-text button">Download the Data</button>
+      <div className='flex justify-center gap-[30px]'>
+        {/* the buttons underneith the graph images to view data*/}
+          <NavLink className='text-white bg-[#AAAAAA] font-semibold p-1.5' to='/graphs'>View the Data</NavLink>
+          <button className='text-white bg-[#AAAAAA] font-semibold  p-1.5' onClick={downloadCSV}>Download the Data</button>
       </div>
-      <section id="section2">
-        <img id="big-image" src={paperStack} alt="papers image"/>
-        <p id="p" className="small-text">Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</p>
+      <section>
+        <div>
+          <img src={paperStack} alt='Paper'/>
+          <p className='text-xl'>Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</p>
+        </div>
       </section>
-      <h3 id="medium-text">Systemic Disparity Insights</h3>
-      <section id="section3">
-          <div className="insight">
-            <h3 id="percent">36%</h3>
-            <p className="insight-text small-text">By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
-          </div>
-          <div className="insight">
-            <h3 id="percent">5%</h3>
-            <p className="insight-text small-text">The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
-          </div>
-          <div className="insight">
-            <h3 id="percent">6x Lower</h3>
-            <p className="insight-text small-text">Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
+      <h3 className='text-5xl'>Systemic Disparity Insights</h3>
+      <section>
+          <div>
+            <div>
+              <h3 className='text-4xl'>36%</h3>
+              <p>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
+            </div>
+            <div>
+              <h3 className='text-4xl'>5%</h3>
+              <p>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
+            </div>
+            <div>
+              <h3 className='text-4xl'>6x Lower</h3>
+              <p>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
+            </div>
           </div>
       </section>
-      <div className="buttons">
-          <button onClick={handleReadMore} id="read-more" className="white-text read-more">Read More</button>
+      <div>
+          <button className='text-white bg-[#666555] font-semibold' onClick={handleReadMore}>Read More</button>
       </div>
       <div>
-          <button onClick={scrollToTop} id="scroll">Back To Top ^</button>
+          <button onClick={scrollToTop}>Back To Top ^</button>
       </div>
       {/* <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div> */}
     </div>
