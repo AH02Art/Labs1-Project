@@ -44,53 +44,53 @@ export const LandingPage = () => {
           <h3>The Asylum Office Grant Rate Tracker provides asylum seekers, researchers, policymakers, and the public an interactive tool to explore USCIS data on Asylum Office decisions</h3>
         </div>
       {/* this section is on the top 3 images */}
-      <section className='flex justify-center m-auto mt-24 mb-[50px] gap-[80px]'>
+      <section className='flex justify-center mt-24 mb-12 gap-[80px]'>
           <div>
-            <img className="h-[300px] w-[500px]" src={barGraph} alt='Bar Graph'/>
+            <img className='h-[300px] w-[500px]' src={barGraph} alt='Bar Graph'/>
             <h3 className='text-2xl mt-4'>Search Grant Rates By Office</h3>
           </div>
           <div>
-            <img className="h-[300px] w-[350px]" src={pieChart} alt='Pie Chart'/>
+            <img className='h-[300px] w-[350px]' src={pieChart} alt='Pie Chart'/>
             <h3 className='text-2xl mt-4'>Search Grant Rates By Nationality</h3>
           </div>
           <div>
-            <img className="h-[300px] w-[500px]" src={lineGraph} alt='Line Graph'/>
+            <img className='h-[300px] w-[500px]' src={lineGraph} alt='Line Graph'/>
             <h3 className='text-2xl mt-4'>Search Grant Rates Over Time</h3>
           </div>
       </section>
       <div className='flex justify-center gap-[30px]'>
         {/* the buttons underneith the graph images to view data*/}
-          <NavLink className='text-white bg-[#AAAAAA] font-semibold p-1.5' to='/graphs'>View the Data</NavLink>
-          <button className='text-white bg-[#AAAAAA] font-semibold  p-1.5' onClick={downloadCSV}>Download the Data</button>
+          <NavLink className='text-white bg-[#AAAAAA] font-semibold p-2' to='/graphs'>View the Data</NavLink>
+          <button className='text-white bg-[#AAAAAA] font-semibold p-2' onClick={downloadCSV}>Download the Data</button>
       </div>
-      <section>
-        <div>
-          <img src={paperStack} alt='Paper'/>
-          <p className='text-xl'>Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</p>
+      <section className='flex justify-center'>
+        <div className='p-32'>
+          <img className='h-[400px] w-[700px] rounded-2xl' src={paperStack} alt='Paper'/>
+        </div>
+        <div className='p-32 text-center'>
+          <p className='text-xl h-[400px] w-[700px] py-[100px]'>Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set.</p>
         </div>
       </section>
       <h3 className='text-5xl'>Systemic Disparity Insights</h3>
-      <section>
-          <div>
-            <div>
-              <h3 className='text-4xl'>36%</h3>
-              <p>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 20202.</p>
-            </div>
-            <div>
-              <h3 className='text-4xl'>5%</h3>
-              <p>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
-            </div>
-            <div>
-              <h3 className='text-4xl'>6x Lower</h3>
-              <p>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
-            </div>
-          </div>
+      <section className='flex justify-center gap-[64px] mb-16'>
+        <div className='max-w-[550px] m-16'>
+          <h3 className='text-4xl'>36%</h3>
+          <p className='text-lg'>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 2020.</p>
+        </div>
+        <div className='max-w-[550px] m-16'>
+          <h3 className='text-4xl'>5%</h3>
+          <p className='text-lg'>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
+        </div>
+        <div className='max-w-[550px] m-16'>
+          <h3 className='text-4xl'>6x Lower</h3>
+          <p className='text-lg'>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
+        </div>
       </section>
       <div>
-          <button className='text-white bg-[#666555] font-semibold' onClick={handleReadMore}>Read More</button>
+          <button className='text-white bg-[#666555] px-4 py-2' onClick={handleReadMore}>Read More</button>
       </div>
       <div>
-          <button onClick={scrollToTop}>Back To Top ^</button>
+          <button className='m-16' onClick={scrollToTop}>Back To Top ^</button>
       </div>
       {/* <div className="test">{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div> */}
     </div>
