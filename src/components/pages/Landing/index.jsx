@@ -74,15 +74,15 @@ export const LandingPage = () => {
       <h3 className='text-5xl'>Systemic Disparity Insights</h3>
       <section className='flex justify-center gap-[64px] mb-16'>
         <div className='max-w-[550px] m-16'>
-          <h3 className='text-4xl'>36%</h3>
+          <h3 className='text-4xl mb-16'>36%</h3>
           <p className='text-lg'>By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 2020.</p>
         </div>
         <div className='max-w-[550px] m-16'>
-          <h3 className='text-4xl'>5%</h3>
+          <h3 className='text-4xl mb-16'>5%</h3>
           <p className='text-lg'>The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.</p>
         </div>
         <div className='max-w-[550px] m-16'>
-          <h3 className='text-4xl'>6x Lower</h3>
+          <h3 className='text-4xl mb-16'>6x Lower</h3>
           <p className='text-lg'>Between fiscal year 2017 and 2020, the New York asylum office's average grant rate was 6 times lower than the San Francisco asylum office.</p>
         </div>
       </section>
