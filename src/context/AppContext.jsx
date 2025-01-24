@@ -15,6 +15,8 @@ const useAppContextProvider = () => {
   const [graphData, setGraphData] = useState(testData);
   const [isDataLoading, setIsDataLoading] = useState(false);
 
+  const url = "https://hrf-asylum-be-b.herokuapp.com/cases";
+
   useLocalStorage({ graphData, setGraphData });
 
   const getFiscalData = () => {
@@ -35,6 +37,18 @@ const useAppContextProvider = () => {
 
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
+    axios.all([`${url}/fiscalSummary`, `${url}//citizenshipSummary`])
+    .then(function(response) {
+      const { data } = response;
+      console.log("Here's the data!", data);
+      setGraphData(data);
+    })
+    .catch(function (error) {
+      console.error(`sorry that's not the right answer!: ${error}`)
+    })
+    .finally(function () {
+      setIsDataLoading(false);
+    });
   };
 
   const clearQuery = () => {

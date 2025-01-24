@@ -1,0 +1,8 @@
+
+GET https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary
+
+####
+
+GET https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary
+
+####
