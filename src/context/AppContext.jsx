@@ -37,7 +37,7 @@ const useAppContextProvider = () => {
 
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
-    axios.all([`${url}/fiscalSummary`, `${url}//citizenshipSummary`])
+    axios.get(`${url}/fiscalSummary`)
     .then(function(response) {
       const { data } = response;
       console.log("Here's the data!", data);
