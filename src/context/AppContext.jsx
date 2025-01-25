@@ -37,18 +37,20 @@ const useAppContextProvider = () => {
 
   const fetchData = async () => {
     // TODO: fetch all the required data and set it to the graphData state
-    axios.get(`${url}/fiscalSummary`)
-    .then(function(response) {
-      const { data } = response;
-      console.log("Here's the data!", data);
-      setGraphData(data);
-    })
-    .catch(function (error) {
-      console.error(`sorry that's not the right answer!: ${error}`)
-    })
-    .finally(function () {
+    setIsDataLoading(true);
+    try {
+      const [ fiscal, citizenship ] = await axios.all([
+        axios.get(`${url}/fiscalSummary`),
+        axios.get(`${url}/citizenshipSummary`)
+      ]);
+      const fullData = { ...fiscal.data, citizenshipResults: citizenship.data };
+      setGraphData(fullData);
+    } catch (error) {
+      console.error("Sorry, that's not correct!: ", error);
+    } finally {
       setIsDataLoading(false);
-    });
+    }
+  
   };
 
   const clearQuery = () => {
