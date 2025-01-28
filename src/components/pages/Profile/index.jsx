@@ -12,25 +12,29 @@ import "../Landing/output.css";
 const Profile = () => {
   // TODO: Replace these with functionality from Auth0
   const { isAuthenticated, user } = useAuth0();
-  console.log("user data? ==> ", user);
+  console.log("user data ==> ", user);
 
-  const isLoading = false;
-  // const user = true;
+  // const isLoading = false;
 
-  if (isLoading || !user) {
-    return <div className='text-center p-4'>Loading...</div>;
+  // if (isLoading || !user) {
+  //   return <div className='text-center p-4'>Loading...</div>;
+  // }
+
+  if (isAuthenticated) {
+    return (
+      <div>
+        <img src={user.picture} alt="User Image"/>
+        <h3>{user.name}</h3>
+        <p>{user.email}</p>
+        <button onClick={() => console.log("click me!")} className="text-lg">Logout</button>
+        <div>Profile Page</div>
+      </div>
+    );
+  } else {
+    return (
+      <div>Nuh uh uh! You gotta log in first! 💀</div>
+    )
   }
-
-  return (
-    <div>
-      <img src={user.picture} alt="User Image"/>
-      <h3>{user.name}</h3>
-      
-      <button onClick={() => console.log("click me!")} className="text-lg">Logout</button>
-      <div>Profile Page</div>
-    </div>
-
-  );
 };
 
 export default Profile;
