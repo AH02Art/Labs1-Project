@@ -11,7 +11,7 @@ import "../Landing/output.css";
  */
 const Profile = () => {
   // TODO: Replace these with functionality from Auth0
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user, logout } = useAuth0();
   console.log("user data ==> ", user);
 
   // const isLoading = false;
@@ -22,12 +22,11 @@ const Profile = () => {
 
   if (isAuthenticated) {
     return (
-      <div>
-        <img src={user.picture} alt="User Image"/>
-        <h3>{user.name}</h3>
-        <p>{user.email}</p>
-        <button onClick={() => console.log("click me!")} className="text-lg">Logout</button>
-        <div>Profile Page</div>
+      <div className="flex-c border rounded-lg shadow-2xl m-auto p-8">
+        <img className="w-[100px] h-auto rounded-full m-auto" src={user.picture} alt="User Image"/>
+        <h3 className="text-3xl font-bold pt-4">{user.name}</h3>
+        <p className="text-gray-700 my-4">{user.email}</p>
+        <button onClick={() => logout({ returnTo: window.location.origin })} className="text-white bg-blue-500 py-2 px-4 mx-auto rounded-lg">Logout</button>
       </div>
     );
   } else {
